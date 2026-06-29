@@ -1,12 +1,32 @@
-<div align="center">
+# MAVI II - Unidad 4: Eventos y Colisiones
 
-# Raylib Visual Studio 2022 Template
+**Autor:** German Cerda
 
-[![Raylib](https://img.shields.io/badge/Raylib-4.2.0-1864ab?style=flat-square&labelColor=212529)](https://www.raylib.com/)
-[![Visual Studio 2022](https://img.shields.io/badge/Visual%20Studio-2022-1864ab?style=flat-square&logo=Visual%20Studio&logoColor=white&labelColor=212529)](https://visualstudio.microsoft.com/vs/)
-[![C++](https://img.shields.io/badge/C++-17%2B-1864ab?style=flat-square&logo=C%2B%2B&logoColor=white&labelColor=212529)](https://isocpp.org/)
-[![MIT License](https://img.shields.io/badge/License-MIT-1864ab?style=flat-square&logo=open-source-initiative&logoColor=white&labelColor=212529)](https://opensource.org/licenses/MIT)
+## Descripción
+Sistema de tiro al objetivo que utiliza Box2D y Raylib para detectar colisiones y reaccionar a eventos físicos.
 
-This repository contains a Visual Studio 2022 project file template for the simple and easy-to-use game programming library, Raylib. The project file is portable, allowing you to quickly set up a new Raylib project in Visual Studio on any machine.
+## Mecánica del juego
+- Mantené presionada la tecla **ESPACIO** para cargar potencia
+- Soltá **ESPACIO** para disparar el proyectil
+- El objetivo es impactar en el bloque naranja
+- Al impactar, se muestra un mensaje y cambia el estado del juego
+- Presioná **R** para reiniciar
 
-</div>
+## Conceptos aplicados
+- b2ContactListener (detección de colisiones)
+- BeginContact (detección de impacto)
+- Identificación de cuerpos por tipo y forma
+- Estados del juego (Waiting, Charging, Running, Hit)
+- Sistema de carga de potencia
+
+## Controles
+| Tecla | Acción |
+|-------|--------|
+| **ESPACIO** | Cargar potencia (mantener) / Disparar (soltar) |
+| **R** | Reiniciar el juego |
+
+## Estructura del código
+- `ContactListener.h`: Detecta colisiones entre proyectil y objetivo
+- `PhysicsWorld.h/cpp`: Maneja el mundo físico y los cuerpos
+- `Game.h/cpp`: Controla el flujo del juego y los estados
+- `main.cpp`: Punto de entrada
